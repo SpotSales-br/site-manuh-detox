@@ -89,6 +89,41 @@ Componentes utilitarios ja definidos: `.container-site`, `.section`, `.section-t
 
 Ver [`.env.example`](.env.example). Se nenhum `.env.local` for criado, o site usa os defaults em `src/data/site.ts`.
 
-## Deploy
+## Deploy na Vercel
 
-Target recomendado: **Vercel** (suporte nativo a Next 15). Imagens remotas de `acdn-us.mitiendanube.com` ja estao liberadas em `next.config.mjs`.
+Next 15 e zero-config na Vercel — nao ha `vercel.json`. Ao importar o repo, a plataforma detecta o framework e usa `next build` automaticamente.
+
+### Passos
+
+1. **Vercel → New Project → Import Git Repository** (`SpotSales-br/site-manuh-detox`).
+2. Framework Preset: `Next.js` (auto-detectado). Node Version: `20.x`.
+3. Configurar as variaveis de ambiente (proximo item).
+4. Deploy.
+5. Apontar o dominio `manuhdetox.com.br` em **Settings → Domains**.
+
+### Variaveis de ambiente na Vercel
+
+Definir em **Settings → Environment Variables** (marcar `Production` e `Preview`):
+
+| Variavel                      | Exemplo                        | Obrigatoria |
+| ----------------------------- | ------------------------------ | ----------- |
+| `NEXT_PUBLIC_SITE_URL`        | `https://manuhdetox.com.br`    | Sim (prod)  |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | `5548999394790`                | Nao         |
+| `NEXT_PUBLIC_CONTACT_EMAIL`   | `manudetox@icloud.com`         | Nao         |
+| `NEXT_PUBLIC_INSTAGRAM_HANDLE`| `manuhdetox`                   | Nao         |
+
+Sem `NEXT_PUBLIC_SITE_URL`, `sitemap.xml`, `robots.txt` e Open Graph apontam para o fallback (`https://manuhdetox.com.br`) — ok para producao, mas em previews o metadata ficara com o dominio errado. Se isso incomodar, setar tambem na env **Preview** com a URL de staging ou remover a env em Preview para usar o fallback.
+
+### Checklist antes do primeiro deploy
+
+- [ ] Repo importado na Vercel
+- [ ] Env vars configuradas em Production (minimo: `NEXT_PUBLIC_SITE_URL`)
+- [ ] CI verde em `main` (lint + typecheck + build)
+- [ ] Dominio customizado apontado (quando pronto)
+- [ ] Favicon adicionado em `public/favicon.ico` (hoje retorna 404 — `layout.tsx` ja referencia)
+
+### O que nao muda
+
+- `next.config.mjs` ja libera `acdn-us.mitiendanube.com` para `next/image`.
+- Headers de seguranca (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`) ja definidos.
+- Todas as rotas renderizam estaticas hoje (`○ Static`) — custo de invocacao minimo.
