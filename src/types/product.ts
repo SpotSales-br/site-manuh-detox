@@ -1,8 +1,6 @@
-export type ProductCategory =
-  | "Suplemento"
-  | "Suplemento Avancado"
-  | "Kit Economia"
-  | "Kit Revenda";
+export type ProductCategory = "Suplemento" | "Suplemento Avancado";
+
+export type ProductTagVariant = "iniciante" | "avancado";
 
 export interface Product {
   id: string;
@@ -17,11 +15,10 @@ export interface Product {
   capsulesPerUnit: number;
   image: string;
   imageAlt: string;
-  badge?: {
-    discount?: string;
-    label?: string;
+  tag?: {
+    label: string;
+    variant: ProductTagVariant;
   };
-  isBestSeller?: boolean;
 }
 
 export interface CartItem {

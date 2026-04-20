@@ -17,7 +17,7 @@ export function Header() {
   const count = mounted ? selectCartCount(items) : 0;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
+    <header className="sticky top-[38px] z-50 border-b border-white/10 bg-ink">
       <div className="container-site flex h-[72px] items-center justify-between">
         <BrandLogo />
 
@@ -26,7 +26,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="group relative text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+              className="group relative text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               {item.label}
               <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-brand transition-[width] group-hover:w-full" />
@@ -37,20 +37,20 @@ export function Header() {
         <div className="flex items-center gap-5">
           <button
             aria-label="Buscar"
-            className="text-ink-soft transition-colors hover:text-ink"
+            className="text-white/70 transition-colors hover:text-white"
           >
             <SearchIcon />
           </button>
           <button
             aria-label="Minha conta"
-            className="hidden text-ink-soft transition-colors hover:text-ink sm:block"
+            className="hidden text-white/70 transition-colors hover:text-white sm:block"
           >
             <UserIcon />
           </button>
           <button
             onClick={openCart}
             aria-label="Abrir carrinho"
-            className="relative text-ink-soft transition-colors hover:text-ink"
+            className="relative text-white/70 transition-colors hover:text-white"
           >
             <CartIcon />
             {count > 0 ? (
@@ -63,7 +63,7 @@ export function Header() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Abrir menu"
             aria-expanded={mobileOpen}
-            className="text-2xl text-ink md:hidden"
+            className="text-2xl text-white md:hidden"
           >
             ☰
           </button>
@@ -71,14 +71,14 @@ export function Header() {
       </div>
 
       {mobileOpen ? (
-        <nav className="border-t border-line bg-white px-6 py-4 md:hidden">
+        <nav className="border-t border-white/10 bg-ink px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+                  className="text-sm font-medium text-white/70 transition-colors hover:text-white"
                 >
                   {item.label}
                 </a>

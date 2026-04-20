@@ -2,10 +2,8 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { site, whatsappLink, instagramLink, emailLink } from "@/data/site";
 
 const productLinks = [
-  { label: "Glowvena", href: "#produtos" },
-  { label: "PLENA 3X1", href: "#produtos" },
-  { label: "Diamond", href: "#produtos" },
-  { label: "Kits", href: "#produtos" },
+  { label: "Plena 3X1", href: "#produtos" },
+  { label: "Lifefit", href: "#produtos" },
 ];
 
 const helpLinks = [

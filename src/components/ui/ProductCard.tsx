@@ -14,14 +14,13 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="group relative overflow-hidden rounded-[12px] border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
-      {product.badge?.discount ? (
-        <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-[11px] font-bold text-white">
-          {product.badge.discount}
-        </span>
-      ) : null}
-      {product.isBestSeller ? (
-        <span className="absolute right-4 top-4 z-10 rounded-full bg-leaf px-3 py-1 text-[11px] font-bold text-white">
-          Mais Vendido
+      {product.tag ? (
+        <span
+          className={`absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[1px] text-white ${
+            product.tag.variant === "iniciante" ? "bg-leaf" : "bg-ink"
+          }`}
+        >
+          {product.tag.label}
         </span>
       ) : null}
 

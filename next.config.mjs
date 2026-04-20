@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "acdn-us.mitiendanube.com",
       },
+      {
+        protocol: "https",
+        hostname: "d1a9qnv764bsoo.cloudfront.net",
+      },
     ],
   },
   poweredByHeader: false,

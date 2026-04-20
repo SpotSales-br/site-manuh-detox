@@ -5,12 +5,11 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Products } from "@/components/sections/Products";
+import { TestimonialBanner1 } from "@/components/sections/TestimonialBanner1";
 import { Benefits } from "@/components/sections/Benefits";
-import { HowItWorks } from "@/components/sections/HowItWorks";
 import { About } from "@/components/sections/About";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { CTABanner } from "@/components/sections/CTABanner";
-import { Instagram } from "@/components/sections/Instagram";
+import { TestimonialBanner2 } from "@/components/sections/TestimonialBanner2";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
   return (
@@ -21,12 +20,11 @@ export default function HomePage() {
         <Hero />
         <TrustBar />
         <Products />
+        <TestimonialBanner1 />
         <Benefits />
-        <HowItWorks />
         <About />
-        <Testimonials />
-        <CTABanner />
-        <Instagram />
+        <TestimonialBanner2 />
+        <FinalCTA />
       </main>
       <Footer />
       <WhatsAppFloat />
