@@ -2,8 +2,8 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { site, whatsappLink, instagramLink, emailLink } from "@/data/site";
 
 const productLinks = [
-  { label: "Plena 3X1", href: "#produtos" },
-  { label: "Lifefit", href: "#produtos" },
+  { label: "Plena Unica Premium", href: "/produto/plena" },
+  { label: "Life Fit Pro", href: "/produto/lifefit" },
 ];
 
 const helpLinks = [

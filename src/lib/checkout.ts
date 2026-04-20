@@ -1,10 +1,11 @@
-import type { CartLine } from "@/types/product";
+import type { PricingOption, Product } from "@/types/product";
 import { formatBRL } from "@/lib/format";
 import { site, whatsappLink } from "@/data/site";
 
 export interface CheckoutPayload {
-  lines: CartLine[];
-  subtotal: number;
+  product: Product;
+  option: PricingOption;
+  quantity: number;
 }
 
 export interface CheckoutResult {
@@ -13,7 +14,7 @@ export interface CheckoutResult {
 }
 
 /**
- * Gateway de checkout ainda em defini\u00e7\u00e3o. Enquanto isso, redireciona o
+ * Gateway de checkout ainda em definicao. Enquanto isso, redireciona o
  * pedido para o WhatsApp com um resumo pronto. Para trocar o provedor, basta
  * implementar a branch correspondente (mercadopago/stripe/nuvemshop).
  */
@@ -34,17 +35,14 @@ export const startCheckout = async (
 };
 
 const buildWhatsAppCheckout = ({
-  lines,
-  subtotal,
+  product,
+  option,
+  quantity,
 }: CheckoutPayload): CheckoutResult => {
-  const header = `Ola, ${site.name}! Gostaria de finalizar este pedido:`;
-  const body = lines
-    .map(
-      (line) =>
-        `- ${line.product.name} (x${line.quantity}) — ${formatBRL(line.lineTotal)}`,
-    )
-    .join("\n");
-  const footer = `\nSubtotal: ${formatBRL(subtotal)}`;
+  const total = option.totalPrice * quantity;
+  const header = `Ola, ${site.name}! Gostaria de finalizar esta compra:`;
+  const body = `- ${product.name} (${option.label}) x${quantity} — ${formatBRL(total)}`;
+  const footer = `\nTotal: ${formatBRL(total)}`;
   const message = `${header}\n\n${body}${footer}`;
   return { url: whatsappLink(message), target: "_blank" };
 };

@@ -36,5 +36,4 @@ export const navItems = [
   { href: "#produtos", label: "Produtos" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#depoimentos", label: "Depoimentos" },
 ] as const;

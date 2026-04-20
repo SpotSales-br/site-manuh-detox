@@ -13,24 +13,32 @@ export function FinalCTA() {
         <p className="mb-8 text-base opacity-90">
           Fale com a gente no WhatsApp ou acompanhe novidades no Instagram
         </p>
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="flex flex-col items-center justify-center gap-4">
           <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-white"
+            href="#produtos"
+            className="inline-flex items-center gap-2 rounded-full bg-ink px-10 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
           >
-            <WhatsAppGlyph />
-            Chamar no WhatsApp
+            Quero minha transformacao agora
           </a>
-          <a
-            href={instagramLink}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-white"
-          >
-            <InstagramGlyph />@{site.instagram}
-          </a>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-white"
+            >
+              <WhatsAppGlyph />
+              Chamar no WhatsApp
+            </a>
+            <a
+              href={instagramLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-white"
+            >
+              <InstagramGlyph />@{site.instagram}
+            </a>
+          </div>
         </div>
       </div>
     </section>

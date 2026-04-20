@@ -2,7 +2,7 @@ import Image from "next/image";
 import { whatsappLink } from "@/data/site";
 
 const HERO_IMAGE = "/hero-product.webp";
-const HERO_IMAGE_ALT = "Kit Manuh Detox: Plena 3X1 e LifeFit";
+const HERO_IMAGE_ALT = "Kit Manuh Detox: Plena Unica Premium e Life Fit Pro";
 
 export function Hero() {
   return (

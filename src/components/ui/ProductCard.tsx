@@ -1,16 +1,14 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/types/product";
 import { formatBRL, formatInstallment } from "@/lib/format";
-import { useCart } from "@/lib/cart-store";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const addItem = useCart((s) => s.addItem);
+  const href = `/produto/${product.slug}`;
 
   return (
     <article className="group relative overflow-hidden rounded-[12px] border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
@@ -24,7 +22,11 @@ export function ProductCard({ product }: ProductCardProps) {
         </span>
       ) : null}
 
-      <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] p-6">
+      <Link
+        href={href}
+        className="relative block aspect-square overflow-hidden bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] p-6"
+        aria-label={`Ver ${product.name}`}
+      >
         <Image
           src={product.image}
           alt={product.imageAlt}
@@ -32,15 +34,17 @@ export function ProductCard({ product }: ProductCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-transform duration-500 group-hover:scale-[1.08]"
         />
-      </div>
+      </Link>
 
       <div className="p-5">
         <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-[1.5px] text-ink-muted">
           {product.category}
         </div>
-        <h3 className="mb-1 text-[17px] font-semibold text-ink">
-          {product.name}
-        </h3>
+        <Link href={href}>
+          <h3 className="mb-1 text-[17px] font-semibold text-ink transition-colors hover:text-brand">
+            {product.name}
+          </h3>
+        </Link>
         <p className="mb-4 text-[13px] leading-snug text-ink-muted">
           {product.description}
         </p>
@@ -62,12 +66,12 @@ export function ProductCard({ product }: ProductCardProps) {
             : `${product.units} unidades \u2022 ${product.units * product.capsulesPerUnit} capsulas no total`}
         </div>
 
-        <button
-          onClick={() => addItem(product.id)}
-          className="w-full rounded-[8px] bg-ink py-3.5 text-[13px] font-semibold uppercase tracking-[0.5px] text-white transition-colors hover:bg-brand"
+        <Link
+          href={href}
+          className="block w-full rounded-[8px] bg-ink py-3.5 text-center text-[13px] font-semibold uppercase tracking-[0.5px] text-white transition-colors hover:bg-brand"
         >
-          Adicionar ao Carrinho
-        </button>
+          Quero uma transformacao
+        </Link>
       </div>
     </article>
   );
