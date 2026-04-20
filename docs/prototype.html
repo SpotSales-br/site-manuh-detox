@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuh Detox — Suplementos Naturais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FAFAF8;
+      --bg-white: #FFFFFF;
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-muted: #9E9E9E;
+      --accent: #C45E8A;
+      --accent-light: #F3E0EA;
+      --accent-dark: #A14470;
+      --green: #5A8F5C;
+      --green-light: #E8F0E8;
+      --border: #EBEBEB;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --max-width: 1200px;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== ANNOUNCEMENT BAR ========== */
+    .announcement-bar {
+      background: var(--text-primary);
+      color: white;
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .announcement-bar span { color: var(--accent-light); font-weight: 600; }
+
+    /* ========== HEADER ========== */
+    header {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo em { font-style: normal; color: var(--accent); }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+      position: relative;
+    }
+    nav a:hover { color: var(--text-primary); }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+    nav a:hover::after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .header-actions a { color: var(--text-secondary); transition: color var(--transition); }
+    .header-actions a:hover { color: var(--text-primary); }
+    .cart-icon { position: relative; }
+    .cart-badge {
+      position: absolute; top: -6px; right: -8px;
+      background: var(--accent); color: white;
+      font-size: 10px; font-weight: 700;
+      width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-menu { display: none; background: none; }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, #FAF5F0 0%, #F5EDE6 50%, #F0E8E0 100%);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-content { max-width: 520px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-light); color: var(--green);
+      padding: 8px 16px; border-radius: 50px;
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .hero-badge svg { flex-shrink: 0; }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 600;
+      line-height: 1.15; color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p {
+      font-size: 17px; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 36px;
+    }
+    .hero-buttons { display: flex; gap: 16px; align-items: center; }
+
+    .btn-primary {
+      background: var(--accent); color: white;
+      padding: 16px 36px; border-radius: 50px;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.3px;
+      transition: all var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 94, 138, 0.3);
+    }
+    .btn-secondary {
+      background: transparent; color: var(--text-primary);
+      padding: 16px 36px; border-radius: 50px;
+      font-size: 14px; font-weight: 600;
+      border: 1.5px solid var(--border);
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover { border-color: var(--text-primary); transform: translateY(-2px); }
+
+    .hero-image { position: relative; display: flex; justify-content: center; }
+    .hero-image-main {
+      width: 420px; height: 480px;
+      background: linear-gradient(180deg, rgba(196,94,138,0.06) 0%, rgba(243,224,234,0.3) 100%);
+      border-radius: 24px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-image-main img {
+      width: 85%; height: 85%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+      transition: transform 0.6s ease;
+    }
+    .hero-image-main:hover img { transform: scale(1.05); }
+
+    .hero-float-card {
+      position: absolute;
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+      animation: float 3s ease-in-out infinite;
+    }
+    .hero-float-card.top-right { top: 20px; right: -20px; }
+    .hero-float-card.bottom-left { bottom: 40px; left: -20px; animation-delay: 1.5s; }
+    .float-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .float-icon.pink { background: var(--accent-light); }
+    .float-icon.green { background: var(--green-light); }
+    .float-text { font-size: 13px; }
+    .float-text strong { display: block; font-weight: 600; color: var(--text-primary); }
+    .float-text span { color: var(--text-muted); font-size: 12px; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ========== TRUST BAR ========== */
+    .trust-bar { background: var(--bg-white); border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .trust-items { display: flex; justify-content: center; gap: 60px; }
+    .trust-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--text-secondary); font-weight: 500;
+    }
+    .trust-icon {
+      width: 36px; height: 36px; background: var(--bg); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-tag {
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 36px; font-weight: 600;
+      color: var(--text-primary); margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 16px; color: var(--text-muted);
+      max-width: 500px; margin: 0 auto;
+    }
+
+    /* ========== PRODUCTS GRID ========== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .product-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--accent); color: white;
+      padding: 4px 12px; border-radius: 50px;
+      font-size: 11px; font-weight: 700; z-index: 2;
+    }
+    .product-badge.best-seller {
+      background: var(--green);
+      left: auto;
+      right: 16px;
+    }
+    .product-image {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #F8F5F2 0%, #F2ECE6 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 24px;
+    }
+    .product-image img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
+    }
+    .product-card:hover .product-image img {
+      transform: scale(1.08);
+    }
+    .product-info { padding: 20px; }
+    .product-category {
+      font-size: 11px; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--text-muted);
+      font-weight: 600; margin-bottom: 6px;
+    }
+    .product-name {
+      font-size: 17px; font-weight: 600;
+      color: var(--text-primary); margin-bottom: 4px;
+    }
+    .product-desc {
+      font-size: 13px; color: var(--text-muted);
+      margin-bottom: 16px; line-height: 1.5;
+    }
+    .product-pricing {
+      display: flex; align-items: baseline; gap: 10px;
+      margin-bottom: 6px;
+    }
+    .price-current { font-size: 22px; font-weight: 700; color: var(--text-primary); }
+    .price-original { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
+    .product-installments {
+      font-size: 12px; color: var(--green);
+      font-weight: 500; margin-bottom: 4px;
+    }
+    .product-units {
+      font-size: 11px; color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .btn-add-cart {
+      width: 100%; background: var(--text-primary); color: white;
+      padding: 14px; border-radius: var(--radius-sm);
+      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+      transition: all var(--transition); text-transform: uppercase;
+    }
+    .btn-add-cart:hover { background: var(--accent); }
+
+    /* ========== BENEFITS ========== */
+    .benefits { background: var(--bg-white); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .benefit-card {
+      text-align: center; padding: 40px 32px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    .benefit-card:hover {
+      border-color: var(--accent-light);
+      background: linear-gradient(180deg, rgba(196,94,138,0.03) 0%, transparent 100%);
+    }
+    .benefit-icon {
+      width: 56px; height: 56px; background: var(--accent-light);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin: 0 auto 20px;
+    }
+    .benefit-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+    .benefit-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ========== HOW IT WORKS ========== */
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .how-step {
+      text-align: center;
+      position: relative;
+    }
+    .how-step-number {
+      width: 48px; height: 48px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700;
+      margin: 0 auto 16px;
+      font-family: var(--font-display);
+    }
+    .how-step h3 {
+      font-size: 15px; font-weight: 600;
+      margin-bottom: 6px; color: var(--text-primary);
+    }
+    .how-step p {
+      font-size: 13px; color: var(--text-muted); line-height: 1.5;
+    }
+
+    /* ========== ABOUT / BRAND STORY ========== */
+    .about {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+      color: white;
+    }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-image {
+      width: 100%; aspect-ratio: 4/5;
+      background: linear-gradient(135deg, rgba(196,94,138,0.15) 0%, rgba(196,94,138,0.03) 100%);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; padding: 32px;
+    }
+    .about-image img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.2));
+    }
+    .about .section-tag { color: var(--accent-light); }
+    .about .section-title { color: white; text-align: left; }
+    .about .section-header { text-align: left; margin-bottom: 24px; }
+    .about p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+    .about-stats {
+      display: flex; gap: 40px; margin-top: 36px;
+      padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item strong {
+      display: block; font-size: 32px; font-weight: 700;
+      color: var(--accent-light); font-family: var(--font-display);
+    }
+    .stat-item span { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: var(--bg-white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+    }
+    .testimonial-stars { color: #F5A623; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial-text {
+      font-size: 15px; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 20px; font-style: italic;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 600; color: var(--accent);
+    }
+    .testimonial-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .testimonial-role { font-size: 12px; color: var(--text-muted); }
+
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      padding: 64px 0; text-align: center; color: white;
+    }
+    .cta-banner h2 { font-family: var(--font-display); font-size: 36px; font-weight: 600; margin-bottom: 12px; }
+    .cta-banner p { font-size: 16px; opacity: 0.9; margin-bottom: 32px; }
+    .btn-white {
+      background: white; color: var(--accent-dark);
+      padding: 16px 40px; border-radius: 50px;
+      font-size: 14px; font-weight: 700;
+      transition: all var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    /* ========== INSTAGRAM FEED ========== */
+    .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .insta-item {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #F8F5F2, #F2ECE6);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .insta-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .insta-item:hover img { transform: scale(1.08); }
+    .insta-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(196,94,138,0.0);
+      transition: background var(--transition);
+    }
+    .insta-item:hover::after { background: rgba(196,94,138,0.2); }
+    .insta-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2; opacity: 0; transition: opacity var(--transition);
+      color: white; font-size: 14px; font-weight: 600;
+    }
+    .insta-item:hover .insta-overlay { opacity: 1; }
+
+    /* ========== FOOTER ========== */
+    footer { background: var(--text-primary); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .logo { color: white; margin-bottom: 16px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: all var(--transition);
+    }
+    .footer-social a:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    .footer-col h4 {
+      color: white; font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a { font-size: 14px; color: rgba(255,255,255,0.5); transition: color var(--transition); }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      padding: 24px 0; display: flex;
+      justify-content: space-between; align-items: center;
+      font-size: 13px; color: rgba(255,255,255,0.35);
+    }
+    .payment-icons { display: flex; gap: 8px; font-size: 11px; }
+    .payment-icon { background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; }
+
+    /* ========== WHATSAPP FLOAT ========== */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 56px; height: 56px; background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 28px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 999; transition: all var(--transition);
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-content { max-width: 100%; }
+      .hero-buttons { justify-content: center; }
+      .hero-image { display: none; }
+      .hero h1 { font-size: 40px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .how-it-works-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-inner { grid-template-columns: 1fr; }
+      .about .section-header { text-align: center; }
+      .about-image { max-width: 400px; margin: 0 auto; }
+      .about-stats { justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .mobile-menu { display: block; font-size: 24px; }
+      .hero { padding: 48px 0; }
+      .hero h1 { font-size: 32px; }
+      .hero-buttons { flex-direction: column; }
+      .section { padding: 56px 0; }
+      .section-title { font-size: 28px; }
+      .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .benefits-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .how-it-works-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .trust-items { flex-wrap: wrap; gap: 24px; justify-content: center; }
+      .insta-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Frete gratis nas compras acima de <span>R$500</span> &nbsp;|&nbsp; Parcele em ate 6x sem juros
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">manuh<em>detox</em></a>
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
+        <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+        <a href="#" class="cart-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="mobile-menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          100% Natural
+        </div>
+        <h1>Transforme seu corpo com <em>suplementos naturais</em></h1>
+        <p>Formulas naturais que ajudam a acelerar o metabolismo, reduzir a fome em ate 80% e melhorar o funcionamento intestinal. Resultados reais com ingredientes de alta qualidade.</p>
+        <div class="hero-buttons">
+          <a href="#produtos" class="btn-primary">
+            Ver Produtos
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/5548999394790" class="btn-secondary" target="_blank">Fale Conosco</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-main">
+          <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-13-979c46e2e8a0f8281617661607373977-1024-1024.webp" alt="Glowvena - Suplemento Natural Manuh Detox">
+          <div class="hero-float-card top-right">
+            <div class="float-icon pink">&#10024;</div>
+            <div class="float-text">
+              <strong>Glowvena</strong>
+              <span>Mais vendido</span>
+            </div>
+          </div>
+          <div class="hero-float-card bottom-left">
+            <div class="float-icon green">&#9989;</div>
+            <div class="float-text">
+              <strong>+2.500</strong>
+              <span>Clientes satisfeitas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item"><div class="trust-icon">&#128666;</div>Frete gratis acima de R$500</div>
+        <div class="trust-item"><div class="trust-icon">&#128274;</div>Pagamento seguro</div>
+        <div class="trust-item"><div class="trust-icon">&#127793;</div>Ingredientes naturais</div>
+        <div class="trust-item"><div class="trust-icon">&#128257;</div>Troca garantida</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section class="section" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Nossos Produtos</div>
+        <h2 class="section-title">Favoritos da Manuh</h2>
+        <p class="section-subtitle">Suplementos naturais selecionados para potencializar seus resultados</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Glowvena 1 unidade -->
+        <div class="product-card">
+          <span class="product-badge">-11%</span>
+          <span class="product-badge best-seller">Mais Vendido</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-13-979c46e2e8a0f8281617661607373977-1024-1024.webp" alt="Glowvena 1 Unidade" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Suplemento</div>
+            <div class="product-name">Glowvena</div>
+            <div class="product-desc">Acelera o metabolismo, reduz a fome em 80% e melhora o funcionamento intestinal</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 200,00</span>
+              <span class="price-original">R$ 225,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 33,33 sem juros</div>
+            <div class="product-units">1 unidade &bull; 30 capsulas</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Glowvena 2 unidades -->
+        <div class="product-card">
+          <span class="product-badge">-15%</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-17-040caebcf36a62ceea17661623121415-1024-1024.webp" alt="Glowvena Kit 2 Unidades" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kit Economia</div>
+            <div class="product-name">Glowvena &mdash; 2 unidades</div>
+            <div class="product-desc">Economize no kit com 2 unidades do nosso best-seller para tratamento completo</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 340,00</span>
+              <span class="price-original">R$ 400,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 56,67 sem juros</div>
+            <div class="product-units">2 unidades &bull; 60 capsulas no total</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- PLENA 3X1 1 unidade -->
+        <div class="product-card">
+          <span class="product-badge">-10%</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-9-91bda6eb84daacabee17661605551302-1024-1024.webp" alt="PLENA 3X1 1 Unidade" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Suplemento</div>
+            <div class="product-name">PLENA 3X1</div>
+            <div class="product-desc">Formula 3 em 1 com acao diuretica, detox e emagrecimento. Reduz retencao e inchaco</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 180,00</span>
+              <span class="price-original">R$ 200,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 30,00 sem juros</div>
+            <div class="product-units">1 unidade &bull; 30 capsulas</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Diamond -->
+        <div class="product-card">
+          <span class="product-badge">-10%</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/img_9554-315eab61e5d9ceec2b17727183961040-1024-1024.webp" alt="Diamond" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Suplemento Avancado</div>
+            <div class="product-name">Diamond</div>
+            <div class="product-desc">Formula premium para organismos resistentes. Potencia maxima para quem quer ir alem</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 225,00</span>
+              <span class="price-original">R$ 250,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 37,50 sem juros</div>
+            <div class="product-units">1 unidade &bull; 30 capsulas</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Plena 3X1 2 unidades -->
+        <div class="product-card">
+          <span class="product-badge">-17%</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-19-efba504dec8b5c444317661625524051-1024-1024.webp" alt="Plena 3X1 Kit 2 Unidades" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kit Economia</div>
+            <div class="product-name">PLENA 3X1 &mdash; 2 unidades</div>
+            <div class="product-desc">Kit com 2 unidades da Plena para um tratamento completo com melhor custo-beneficio</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 300,00</span>
+              <span class="price-original">R$ 360,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 50,00 sem juros</div>
+            <div class="product-units">2 unidades &bull; 60 capsulas no total</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- PLENA 3X1 10 unidades -->
+        <div class="product-card">
+          <span class="product-badge">-28%</span>
+          <div class="product-image">
+            <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-28-70c60fce6ec89cbd3b17661643739180-1024-1024.webp" alt="PLENA 3X1 Kit 10 Unidades Revenda" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kit Revenda</div>
+            <div class="product-name">PLENA 3X1 &mdash; 10 unidades</div>
+            <div class="product-desc">Kit especial para revendedoras com preco exclusivo e maior margem de lucro</div>
+            <div class="product-pricing">
+              <span class="price-current">R$ 1.300,00</span>
+              <span class="price-original">R$ 1.800,00</span>
+            </div>
+            <div class="product-installments">ou 6x de R$ 216,67 sem juros</div>
+            <div class="product-units">10 unidades &bull; 300 capsulas no total</div>
+            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section benefits" id="beneficios">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Por que escolher a Manuh?</div>
+        <h2 class="section-title">Cuidado em cada detalhe</h2>
+        <p class="section-subtitle">Qualidade, transparencia e resultados reais</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127807;</div>
+          <h3>100% Natural</h3>
+          <p>Ingredientes naturais selecionados, sem quimicos agressivos ou conservantes artificiais.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128293;</div>
+          <h3>Reduz a Fome em 80%</h3>
+          <p>Formulas que ajudam a controlar a compulsao alimentar e a vontade de doces de forma natural.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128156;</div>
+          <h3>Resultados Reais</h3>
+          <p>Mais de 2.500 clientes satisfeitas com resultados visiveis ja nas primeiras semanas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Como Funciona</div>
+        <h2 class="section-title">Simples de usar, facil de ver resultados</h2>
+        <p class="section-subtitle">Siga o protocolo e veja a transformacao acontecer</p>
+      </div>
+      <div class="how-it-works-grid">
+        <div class="how-step">
+          <div class="how-step-number">1</div>
+          <h3>Escolha seu produto</h3>
+          <p>Glowvena para suporte intestinal ou Plena 3X1 para acao diuretica</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">2</div>
+          <h3>Semana de adaptacao</h3>
+          <p>Tome em dias alternados na 1a semana para o corpo se adaptar</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">3</div>
+          <h3>1 capsula por dia</h3>
+          <p>Apos o cafe da manha, nunca em jejum. Beba bastante agua</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">4</div>
+          <h3>Veja os resultados</h3>
+          <p>Menos fome, menos inchaco, mais energia e perda de peso natural</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="sobre">
+    <div class="container about-inner">
+      <div class="about-image">
+        <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-31-c92d40eaa4178d653217677186956663-1024-1024.webp" alt="Produtos Manuh Detox">
+      </div>
+      <div>
+        <div class="section-header">
+          <div class="section-tag">Nossa Historia</div>
+          <h2 class="section-title">Mais do que produtos, uma transformacao</h2>
+        </div>
+        <p>A Manuh Detox nasceu da vontade de ajudar mulheres a se sentirem bem consigo mesmas, de forma natural e saudavel.</p>
+        <p>Selecionamos cada ingrediente com carinho e rigor, garantindo que voce tenha acesso ao que ha de melhor em suplementacao natural para emagrecimento e bem-estar.</p>
+        <div class="about-stats">
+          <div class="stat-item"><strong>2.500+</strong><span>Clientes satisfeitas</span></div>
+          <div class="stat-item"><strong>6</strong><span>Produtos premium</span></div>
+          <div class="stat-item"><strong>4.8</strong><span>Avaliacao media</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Depoimentos</div>
+        <h2 class="section-title">O que nossas clientes dizem</h2>
+        <p class="section-subtitle">Resultados reais de mulheres que transformaram suas vidas</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Comecei a usar o Glowvena ha 3 meses e ja perdi 8kg. Alem de emagrecer, minha pele e cabelo estao muito melhores!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div><div class="testimonial-name">Ana Paula</div><div class="testimonial-role">Cliente ha 3 meses</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"O PLENA 3X1 mudou minha rotina. Tenho mais energia, menos inchaco e me sinto muito mais disposta no dia a dia."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C</div>
+            <div><div class="testimonial-name">Camila Santos</div><div class="testimonial-role">Cliente ha 6 meses</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Ja testei varios suplementos e o Diamond foi o unico que realmente funcionou. Super recomendo! Atendimento incrivel tambem."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div><div class="testimonial-name">Julia Mendes</div><div class="testimonial-role">Cliente ha 1 ano</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Pronta para comecar sua transformacao?</h2>
+      <p>Fale com a gente pelo WhatsApp e tire todas as suas duvidas</p>
+      <a href="https://wa.me/5548999394790" class="btn-white" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="section" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">@manuhdetox</div>
+        <h2 class="section-title">Siga no Instagram</h2>
+        <p class="section-subtitle">Acompanhe dicas, resultados e novidades</p>
+      </div>
+      <div class="insta-grid">
+        <div class="insta-item">
+          <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-14-7f4baa27a4afa0e90217661608661030-1024-1024.webp" alt="Manuh Detox Instagram" loading="lazy">
+          <div class="insta-overlay">@manuhdetox</div>
+        </div>
+        <div class="insta-item">
+          <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-29-4af28e50d8446c418f17677182110557-1024-1024.webp" alt="Manuh Detox Instagram" loading="lazy">
+          <div class="insta-overlay">@manuhdetox</div>
+        </div>
+        <div class="insta-item">
+          <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/img_9551-584637fd4aafa36e4a17727183963204-1024-1024.webp" alt="Manuh Detox Instagram" loading="lazy">
+          <div class="insta-overlay">@manuhdetox</div>
+        </div>
+        <div class="insta-item">
+          <img src="https://acdn-us.mitiendanube.com/stores/006/773/710/products/plena-unica-15-d66a9424cd5a38a3c817661608872853-1024-1024.webp" alt="Manuh Detox Instagram" loading="lazy">
+          <div class="insta-overlay">@manuhdetox</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">manuh<em>detox</em></div>
+          <p>Suplementos naturais para quem busca resultados reais com saude e bem-estar.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/manuhdetox" target="_blank">&#128247;</a>
+            <a href="https://wa.me/5548999394790" target="_blank">&#128172;</a>
+            <a href="mailto:manudetox@icloud.com">&#9993;</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="#">Glowvena</a></li>
+            <li><a href="#">PLENA 3X1</a></li>
+            <li><a href="#">Diamond</a></li>
+            <li><a href="#">Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ajuda</h4>
+          <ul>
+            <li><a href="#">Perguntas frequentes</a></li>
+            <li><a href="#">Trocas e devolucoes</a></li>
+            <li><a href="#">Rastrear pedido</a></li>
+            <li><a href="#">Formas de pagamento</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:manudetox@icloud.com">manudetox@icloud.com</a></li>
+            <li><a href="https://wa.me/5548999394790">(48) 99939-4790</a></li>
+            <li><a href="https://instagram.com/manuhdetox">@manuhdetox</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Manuh Detox. Todos os direitos reservados.</span>
+        <div class="payment-icons">
+          <span class="payment-icon">Pix</span>
+          <span class="payment-icon">Visa</span>
+          <span class="payment-icon">Master</span>
+          <span class="payment-icon">Boleto</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5548999394790" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+</body>
+</html>
