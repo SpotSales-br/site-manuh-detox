@@ -14,21 +14,31 @@ export function ManuelaStory() {
     <section className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] text-white">
       <div className="container-site pt-16 md:pt-20">
         <div className="mx-auto max-w-[760px] text-center">
-          <SectionHeader
-            tag="Nossa Historia"
-            title="Mais do que produtos, uma transformacao"
-            align="center"
-            inverted
-          />
+          <div data-animate="fade-up">
+            <SectionHeader
+              tag="Nossa Historia"
+              title="Mais do que produtos, uma transformacao"
+              align="center"
+              inverted
+            />
+          </div>
 
-          <p className="mb-6 text-lg leading-relaxed text-white/80 md:text-xl">
+          <p
+            data-animate="fade-up"
+            className="mb-6 text-lg leading-relaxed text-white/80 md:text-xl"
+          >
             Se voce chegou ate aqui... provavelmente ja passou por isso:
           </p>
 
-          <ul className="mx-auto mb-8 flex max-w-[520px] flex-col gap-3 text-left">
+          <ul
+            data-animate="stagger-right"
+            data-animate-stagger="0.1"
+            className="mx-auto mb-8 flex max-w-[520px] flex-col gap-3 text-left"
+          >
             {painPoints.map((item) => (
               <li
                 key={item}
+                data-animate-item
                 className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-[15px] leading-relaxed text-white/80 md:text-base"
               >
                 <span
@@ -61,7 +71,10 @@ export function ManuelaStory() {
             Aquela mulher confiante, leve, que se amava... sumiu.
           </p>
 
-          <div className="mx-auto mb-10 max-w-[560px] rounded-2xl border border-brand/30 bg-brand/10 px-6 py-6 md:px-8 md:py-7">
+          <div
+            data-animate="slide-blur"
+            className="mx-auto mb-10 max-w-[560px] rounded-2xl border border-brand/30 bg-brand/10 px-6 py-6 md:px-8 md:py-7"
+          >
             <p className="text-[15px] leading-relaxed text-white/75 md:text-base">
               Mas deixa eu te falar algo com toda sinceridade:
             </p>
@@ -81,7 +94,10 @@ export function ManuelaStory() {
             E eu ja estive exatamente onde voce esta hoje.
           </p>
 
-          <div className="mx-auto mb-10 flex max-w-[520px] items-center justify-center gap-6 rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-7 md:gap-10 md:px-10">
+          <div
+            data-animate="scale-in"
+            className="mx-auto mb-10 flex max-w-[520px] items-center justify-center gap-6 rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-7 md:gap-10 md:px-10"
+          >
             <div className="flex flex-col items-center">
               <strong className="font-display text-4xl font-bold text-white/80 md:text-5xl">
                 97kg
@@ -114,7 +130,10 @@ export function ManuelaStory() {
             Ate que decidi mudar. Nao com dieta maluca. Nao passando fome. Mas
             encontrando algo que funcionasse na vida real.
           </p>
-          <p className="mb-5 font-display text-2xl font-semibold text-brand-light md:text-3xl">
+          <p
+            data-animate="clip-reveal"
+            className="mb-5 inline-block font-display text-2xl font-semibold text-brand-light md:text-3xl"
+          >
             E foi assim que eu eliminei 30kg.
           </p>
           <p className="mb-5 text-base leading-loose text-white/70">
@@ -129,9 +148,13 @@ export function ManuelaStory() {
             hoje centenas de mulheres tambem estao conseguindo.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-10 border-t border-white/10 pt-9">
+          <div
+            data-animate="stagger-scale"
+            data-animate-stagger="0.15"
+            className="mt-10 flex flex-wrap justify-center gap-10 border-t border-white/10 pt-9"
+          >
             {aboutStats.map((stat) => (
-              <div key={stat.label}>
+              <div key={stat.label} data-animate-item>
                 <strong className="block font-display text-3xl font-bold text-brand-light">
                   {stat.value}
                 </strong>
@@ -143,13 +166,19 @@ export function ManuelaStory() {
       </div>
 
       <div className="relative mt-12 aspect-[16/7] w-full overflow-hidden md:mt-16 md:aspect-[21/8]">
-        <Image
-          src={testimonialBanner2}
-          alt="Depoimento de cliente Manuh Detox"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
+        <div
+          data-animate="parallax"
+          data-parallax-distance="120"
+          className="absolute inset-0"
+        >
+          <Image
+            src={testimonialBanner2}
+            alt="Depoimento de cliente Manuh Detox"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
       </div>
     </section>
   );

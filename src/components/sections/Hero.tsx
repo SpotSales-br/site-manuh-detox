@@ -6,14 +6,23 @@ const HERO_IMAGE_ALT = "Kit Manuh Detox: Plena Unica Premium e Life Fit Pro";
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-[#FAF5F0] via-[#F5EDE6] to-[#F0E8E0] py-20 md:py-24">
+    <section
+      data-animate="hero"
+      className="overflow-hidden bg-gradient-to-br from-[#FAF5F0] via-[#F5EDE6] to-[#F0E8E0] py-20 md:py-24"
+    >
       <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-[60px]">
         <div className="mx-auto max-w-[520px] text-center lg:mx-0 lg:text-left">
-          <h1 className="mb-5 font-display text-[40px] font-semibold leading-[1.15] text-ink md:text-[52px]">
+          <h1
+            data-animate-item
+            className="mb-5 font-display text-[40px] font-semibold leading-[1.15] text-ink md:text-[52px]"
+          >
             Transforme seu corpo com{" "}
             <em className="italic text-brand">suplementos naturais</em>
           </h1>
-          <p className="mb-9 text-[17px] leading-relaxed text-ink-soft">
+          <p
+            data-animate-item
+            className="mb-9 text-[17px] leading-relaxed text-ink-soft"
+          >
             Sua leveza comeca aqui.
             <br />
             Barriga lisa e energia que transborda.
@@ -21,7 +30,10 @@ export function Hero() {
             Um habito simples que transforma seu corpo por dentro. Menos
             inchaco. Mais leveza. Todos os dias.
           </p>
-          <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+          <div
+            data-animate-item
+            className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+          >
             <a href="#produtos" className="btn-primary">
               Ver Produtos
               <svg
@@ -46,7 +58,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative hidden lg:block">
+        <div data-animate-item className="relative hidden lg:block">
           <div className="relative mx-auto aspect-square w-full max-w-[520px]">
             <Image
               src={HERO_IMAGE}

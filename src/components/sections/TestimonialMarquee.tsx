@@ -5,10 +5,17 @@ export function TestimonialMarquee() {
     <section id="depoimentos" className="section bg-white overflow-hidden">
       <div className="container-site">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 font-display text-4xl font-semibold text-ink md:text-[36px]">
+          <h2
+            data-animate="clip-reveal"
+            className="mb-3 inline-block font-display text-4xl font-semibold text-ink md:text-[36px]"
+          >
             Quem usa, sente a diferenca.
           </h2>
-          <p className="mx-auto max-w-[500px] text-base text-ink-muted">
+          <p
+            data-animate="fade-up"
+            data-animate-delay="0.15"
+            className="mx-auto max-w-[500px] text-base text-ink-muted"
+          >
             Depoimentos reais de quem ja sentiu a leveza da Manuh Detox.
           </p>
         </div>

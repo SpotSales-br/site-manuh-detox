@@ -7,13 +7,24 @@ export function FinalCTA() {
       className="bg-gradient-to-br from-brand to-brand-dark py-16 text-center text-white"
     >
       <div className="container-site">
-        <h2 className="mb-3 font-display text-[36px] font-semibold">
+        <h2
+          data-animate="clip-reveal"
+          className="mb-3 inline-block font-display text-[36px] font-semibold"
+        >
           Pronta para comecar sua transformacao?
         </h2>
-        <p className="mb-8 text-base opacity-90">
+        <p
+          data-animate="slide-blur"
+          data-animate-delay="0.15"
+          className="mb-8 text-base opacity-90"
+        >
           Fale com a gente no WhatsApp ou acompanhe novidades no Instagram
         </p>
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div
+          data-animate="fade-up"
+          data-animate-delay="0.3"
+          className="flex flex-col items-center justify-center gap-4"
+        >
           <a
             href="#produtos"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-10 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"

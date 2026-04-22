@@ -35,7 +35,8 @@ export const aboutStats = [
 export const navItems = [
   { href: "#produtos", label: "Produtos" },
   { href: "#beneficios", label: "Beneficios" },
-  { href: "#sobre", label: "Sobre" },
+  { href: "#depoimentos", label: "Depoimentos" },
+  { href: "#contato", label: "Contato" },
 ] as const;
 
 export interface HowToUseStep {

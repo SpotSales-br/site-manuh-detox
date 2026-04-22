@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { site } from "@/data/site";
+import { ScrollAnimations } from "@/components/ScrollAnimations";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,8 +66,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js-ready');" +
+              "if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)" +
+              "document.documentElement.classList.add('reduced-motion');",
+          }}
+        />
+      </head>
+      <body>
+        {children}
+        <ScrollAnimations />
+      </body>
     </html>
   );
 }

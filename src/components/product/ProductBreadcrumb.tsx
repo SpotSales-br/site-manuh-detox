@@ -7,6 +7,7 @@ interface ProductBreadcrumbProps {
 export function ProductBreadcrumb({ productName }: ProductBreadcrumbProps) {
   return (
     <nav
+      data-animate="fade-up"
       aria-label="Navegacao estrutural"
       className="container-site pt-6 text-[12px] text-ink-muted"
     >

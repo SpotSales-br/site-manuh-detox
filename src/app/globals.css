@@ -158,3 +158,25 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+html.js-ready:not(.reduced-motion) [data-animate="fade-up"],
+html.js-ready:not(.reduced-motion) [data-animate="fade-right"],
+html.js-ready:not(.reduced-motion) [data-animate="fade-left"],
+html.js-ready:not(.reduced-motion) [data-animate="scale-in"],
+html.js-ready:not(.reduced-motion) [data-animate="zoom-reveal"],
+html.js-ready:not(.reduced-motion) [data-animate="slide-blur"],
+html.js-ready:not(.reduced-motion) [data-animate="rotate-in"],
+html.js-ready:not(.reduced-motion) [data-animate="flip-in"],
+html.js-ready:not(.reduced-motion) [data-animate="pin-fade"],
+html.js-ready:not(.reduced-motion) [data-animate^="stagger"] > [data-animate-item],
+html.js-ready:not(.reduced-motion) [data-animate="hero"] [data-animate-item] {
+  visibility: hidden;
+}
+
+html.js-ready:not(.reduced-motion) [data-animate="clip-reveal"] {
+  clip-path: inset(0 100% 0 0);
+}
+
+html.js-ready:not(.reduced-motion) [data-animate="zoom-reveal"] {
+  overflow: hidden;
+}

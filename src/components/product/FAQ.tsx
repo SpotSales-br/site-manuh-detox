@@ -13,7 +13,10 @@ export function FAQ({ items }: FAQProps) {
   return (
     <section className="section bg-bg-white">
       <div className="container-site">
-        <div className="mx-auto mb-10 max-w-[640px] text-center">
+        <div
+          data-animate="fade-up"
+          className="mx-auto mb-10 max-w-[640px] text-center"
+        >
           <p className="section-tag">Duvidas frequentes</p>
           <h2 className="section-title">Ainda tem duvida? A gente responde</h2>
           <p className="section-subtitle">
@@ -21,12 +24,17 @@ export function FAQ({ items }: FAQProps) {
           </p>
         </div>
 
-        <ul className="mx-auto flex max-w-[720px] flex-col gap-3">
+        <ul
+          data-animate="stagger"
+          data-animate-stagger="0.08"
+          className="mx-auto flex max-w-[720px] flex-col gap-3"
+        >
           {items.map((item, index) => {
             const isOpen = index === openIndex;
             return (
               <li
                 key={item.question}
+                data-animate-item
                 className="overflow-hidden rounded-[12px] border border-line bg-white"
               >
                 <button

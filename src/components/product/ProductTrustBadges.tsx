@@ -2,10 +2,11 @@ import { productTrustBadges } from "@/data/product-details";
 
 export function ProductTrustBadges() {
   return (
-    <ul className="grid grid-cols-2 gap-3">
+    <ul data-animate="stagger" data-animate-stagger="0.08" className="grid grid-cols-2 gap-3">
       {productTrustBadges.map((badge) => (
         <li
           key={badge.title}
+          data-animate-item
           className="flex items-start gap-3 rounded-[12px] border border-line bg-white p-3"
         >
           <span className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden>
