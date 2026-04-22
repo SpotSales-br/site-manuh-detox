@@ -95,8 +95,8 @@ export default async function ProductPage({
           items={product.composition}
           differential={product.differential}
         />
-        <ManuelaStory />
         <UsageSteps steps={product.usageInstructions} />
+        <ManuelaStory />
         <FAQ items={productFaq} />
       </main>
       <Footer />

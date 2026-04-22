@@ -74,17 +74,6 @@ export const productFaq: FaqItem[] = [
   },
 ];
 
-export const manuelaStory = {
-  tag: "A historia da Manu",
-  title: "De 97kg para 67kg: a transformacao que virou missao",
-  paragraphs: [
-    "Eu ja fui como voce. Ja olhei no espelho e nao reconheci o corpo que estava ali. Ja tentei chas, dietas da internet, academia, tudo de um jeito e de outro.",
-    "Ate que cheguei nesses suplementos. Perdi 30kg, fui de 97kg para 67kg, e resgatei muito mais do que o corpo: a autoestima, o prazer de me arrumar, a energia pra cuidar da minha familia.",
-    "Hoje a Manuh Detox existe pra entregar o mesmo que entregou pra mim, pra minha irma, pro meu marido. Produtos a base de ervas naturais, com alvara de vendas, e uma historia real por tras.",
-  ],
-  signature: "Manuela, fundadora da Manuh Detox",
-} as const;
-
 export const productTrustBadges = [
   { title: "100% Natural", description: "Formula a base de ervas" },
   { title: "Garantia de 15 dias", description: "Resultado ou dinheiro de volta" },

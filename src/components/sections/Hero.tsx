@@ -14,9 +14,12 @@ export function Hero() {
             <em className="italic text-brand">suplementos naturais</em>
           </h1>
           <p className="mb-9 text-[17px] leading-relaxed text-ink-soft">
-            Formulas naturais que ajudam a acelerar o metabolismo, reduzir a
-            fome em ate 80% e melhorar o funcionamento intestinal. Resultados
-            reais com ingredientes de alta qualidade.
+            Sua leveza comeca aqui.
+            <br />
+            Barriga lisa e energia que transborda.
+            <br />
+            Um habito simples que transforma seu corpo por dentro. Menos
+            inchaco. Mais leveza. Todos os dias.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
             <a href="#produtos" className="btn-primary">

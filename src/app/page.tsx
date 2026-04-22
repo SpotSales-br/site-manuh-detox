@@ -6,7 +6,8 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Products } from "@/components/sections/Products";
 import { Benefits } from "@/components/sections/Benefits";
-import { About } from "@/components/sections/About";
+import { HowToUse } from "@/components/sections/HowToUse";
+import { TestimonialMarquee } from "@/components/sections/TestimonialMarquee";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
@@ -17,9 +18,10 @@ export default function HomePage() {
       <main>
         <Hero />
         <TrustBar />
-        <Products />
         <Benefits />
-        <About />
+        <Products />
+        <HowToUse />
+        <TestimonialMarquee />
         <FinalCTA />
       </main>
       <Footer />
