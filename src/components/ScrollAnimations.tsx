@@ -112,8 +112,14 @@ export function ScrollAnimations() {
           .forEach((el) => {
             const delay = Number(el.dataset.animateDelay ?? 0);
             const start = el.dataset.animateStart ?? "top 88%";
+            const durationOverride = el.dataset.animateDuration
+              ? Number(el.dataset.animateDuration)
+              : undefined;
             gsap.fromTo(el, config.from, {
               ...config.to,
+              ...(durationOverride !== undefined
+                ? { duration: durationOverride }
+                : {}),
               delay,
               scrollTrigger: {
                 trigger: el,
@@ -134,8 +140,14 @@ export function ScrollAnimations() {
             if (items.length === 0) return;
             const stagger = Number(group.dataset.animateStagger ?? 0.12);
             const start = group.dataset.animateStart ?? "top 82%";
+            const durationOverride = group.dataset.animateDuration
+              ? Number(group.dataset.animateDuration)
+              : undefined;
             gsap.fromTo(items, config.from, {
               ...config.to,
+              ...(durationOverride !== undefined
+                ? { duration: durationOverride }
+                : {}),
               stagger,
               scrollTrigger: {
                 trigger: group,

@@ -5,7 +5,7 @@ export function Benefits() {
   return (
     <section id="beneficios" className="section bg-white">
       <div className="container-site">
-        <div data-animate="fade-up">
+        <div data-animate="fade-up" data-animate-duration="0.5">
           <SectionHeader
             tag="Por que escolher a Manuh?"
             title="Cuidado em cada detalhe"
@@ -14,7 +14,8 @@ export function Benefits() {
         </div>
         <div
           data-animate="stagger-blur"
-          data-animate-stagger="0.15"
+          data-animate-stagger="0.06"
+          data-animate-duration="0.55"
           className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {benefits.map((b) => (

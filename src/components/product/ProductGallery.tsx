@@ -15,14 +15,14 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
   return (
     <div className="flex flex-col gap-3 md:flex-row md:gap-4">
       {images.length > 1 ? (
-        <div className="order-2 grid grid-cols-4 gap-3 md:order-1 md:w-20 md:flex-shrink-0 md:grid-cols-1">
+        <div className="order-2 flex flex-col gap-3 md:order-1 md:w-20 md:flex-shrink-0 md:self-start">
           {images.map((src, index) => (
             <button
               key={`${src}-${index}`}
               type="button"
               onClick={() => setActive(index)}
               aria-label={`Ver imagem ${index + 1}`}
-              className={`relative aspect-square overflow-hidden rounded-[10px] border-2 bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] transition-all ${
+              className={`relative aspect-square w-20 overflow-hidden rounded-[10px] border-2 bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] transition-all md:w-full ${
                 index === active
                   ? "border-brand"
                   : "border-line hover:border-ink-muted"

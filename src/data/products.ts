@@ -94,14 +94,9 @@ export const products: Product[] = [
     installments: 6,
     units: 1,
     capsulesPerUnit: 30,
-    image: "/lifefit-produto.webp",
+    image: "/lifefit-1unidade.webp",
     imageAlt: "Life Fit Pro - suplemento avancado",
-    galleryImages: [
-      "/lifefit-produto.webp",
-      "/lifefit-produto.webp",
-      "/lifefit-produto.webp",
-      "/lifefit-produto.webp",
-    ],
+    galleryImages: ["/lifefit-1unidade.webp", "/lifefit-2unidades.webp"],
     tag: { label: "Avancado", variant: "avancado" },
     pricingOptions: [
       {

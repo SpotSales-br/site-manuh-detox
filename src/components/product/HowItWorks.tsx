@@ -20,7 +20,7 @@ export function HowItWorks({ items }: HowItWorksProps) {
         <ul
           data-animate="stagger-blur"
           data-animate-stagger="0.1"
-          className="mx-auto grid max-w-[960px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto grid max-w-[720px] grid-cols-1 gap-4 sm:grid-cols-2"
         >
           {items.map((item, index) => (
             <li
