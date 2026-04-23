@@ -11,9 +11,9 @@ export function HowItWorks({ items }: HowItWorksProps) {
           className="mx-auto mb-10 max-w-[640px] text-center"
         >
           <p className="section-tag">Como atua no seu corpo</p>
-          <h2 className="section-title">O que acontece quando voce comeca</h2>
+          <h2 className="section-title">O que acontece quando você começa</h2>
           <p className="section-subtitle">
-            Formula natural agindo em varias frentes ao mesmo tempo para destravar o emagrecimento.
+            Fórmula natural agindo em várias frentes ao mesmo tempo para destravar o emagrecimento.
           </p>
         </div>
 

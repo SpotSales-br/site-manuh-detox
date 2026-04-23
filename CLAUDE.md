@@ -24,7 +24,7 @@ Stack de produção:
 - Imagens:
   - Ativos locais em [public/](public/) (ex.: `hero-product.webp`, `plena-produto.webp`, `lifefit-produto.webp`) — fonte em [documents/](documents/) e copiados para `public/` quando usados
   - Remotas via `acdn-us.mitiendanube.com` (banners de depoimento) e `d1a9qnv764bsoo.cloudfront.net` (logo da marca) — ambos whitelisted em `next.config.mjs`
-- Idioma do conteúdo: **pt-BR**, sem acentos/cedilhas nos textos do HTML (padrão herdado do protótipo — só reintroduzir com pedido explícito e em migração completa)
+- Idioma do conteúdo: **pt-BR** com acentuação e cedilhas corretas em todo o texto visível. Mantenha essa ortografia ao adicionar ou editar conteúdo (legados sem acento foram migrados em 2026-04-22). Identificadores internos que não aparecem na UI podem continuar sem acento — ex.: `ProductTagVariant: "avancado"`, ancoras `#beneficios`, chaves/slugs, `variant` em `tag`.
 
 Canais de contato centralizados em [src/data/site.ts](src/data/site.ts): WhatsApp `5548999394790`, e-mail `manudetox@icloud.com`, Instagram `@manuhdetox`. Pode ser sobrescrito via `.env.local` (ver `.env.example`).
 

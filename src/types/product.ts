@@ -1,4 +1,4 @@
-export type ProductCategory = "Suplemento" | "Suplemento Avancado";
+export type ProductCategory = "Suplemento" | "Suplemento Avançado";
 
 export type ProductTagVariant = "iniciante" | "avancado";
 

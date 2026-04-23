@@ -8,13 +8,13 @@ export function ProductBreadcrumb({ productName }: ProductBreadcrumbProps) {
   return (
     <nav
       data-animate="fade-up"
-      aria-label="Navegacao estrutural"
+      aria-label="Navegação estrutural"
       className="container-site pt-6 text-[12px] text-ink-muted"
     >
       <ol className="flex flex-wrap items-center gap-2">
         <li>
           <Link href="/" className="transition-colors hover:text-ink">
-            Inicio
+            Início
           </Link>
         </li>
         <li aria-hidden>/</li>

@@ -11,7 +11,7 @@ export function FinalCTA() {
           data-animate="clip-reveal"
           className="mb-3 inline-block font-display text-[36px] font-semibold"
         >
-          Pronta para comecar sua transformacao?
+          Pronta para começar sua transformação?
         </h2>
         <p
           data-animate="slide-blur"
@@ -29,7 +29,7 @@ export function FinalCTA() {
             href="#produtos"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-10 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
           >
-            Quero minha transformacao agora
+            Quero minha transformação agora
           </a>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a

@@ -17,8 +17,8 @@ export function FAQ({ items }: FAQProps) {
           data-animate="fade-up"
           className="mx-auto mb-10 max-w-[640px] text-center"
         >
-          <p className="section-tag">Duvidas frequentes</p>
-          <h2 className="section-title">Ainda tem duvida? A gente responde</h2>
+          <p className="section-tag">Dúvidas frequentes</p>
+          <h2 className="section-title">Ainda tem dúvida? A gente responde</h2>
           <p className="section-subtitle">
             As perguntas mais comuns das nossas clientes, respondidas de forma direta.
           </p>

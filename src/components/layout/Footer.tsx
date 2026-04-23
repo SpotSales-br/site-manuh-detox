@@ -2,13 +2,13 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { site, whatsappLink, instagramLink, emailLink } from "@/data/site";
 
 const productLinks = [
-  { label: "Plena Unica Premium", href: "/produto/plena" },
+  { label: "Plena Única Premium", href: "/produto/plena" },
   { label: "Life Fit Pro", href: "/produto/lifefit" },
 ];
 
 const helpLinks = [
   { label: "Perguntas frequentes", href: "#" },
-  { label: "Trocas e devolucoes", href: "#" },
+  { label: "Trocas e devoluções", href: "#" },
   { label: "Rastrear pedido", href: "#" },
   { label: "Formas de pagamento", href: "#" },
 ];
@@ -26,7 +26,7 @@ export function Footer() {
           <div>
             <BrandLogo className="text-white [&_em]:text-brand-light" href="/" />
             <p className="mt-4 text-sm leading-relaxed">
-              Suplementos naturais para quem busca resultados reais com saude e
+              Suplementos naturais para quem busca resultados reais com saúde e
               bem-estar.
             </p>
             <div className="mt-5 flex gap-3">

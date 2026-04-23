@@ -4,9 +4,9 @@ import { aboutStats } from "@/data/content";
 import { testimonialBanner2 } from "@/data/products";
 
 const painPoints = [
-  "Ja tentou dieta e desistiu no meio do caminho",
-  "Ja comecou academia e nao conseguiu manter a rotina",
-  "Ja comprou coisas que prometeram muito... e nao entregaram nada",
+  "Já tentou dieta e desistiu no meio do caminho",
+  "Já começou academia e não conseguiu manter a rotina",
+  "Já comprou coisas que prometeram muito... e não entregaram nada",
 ];
 
 export function ManuelaStory() {
@@ -16,8 +16,8 @@ export function ManuelaStory() {
         <div className="mx-auto max-w-[760px] text-center">
           <div data-animate="fade-up">
             <SectionHeader
-              tag="Nossa Historia"
-              title="Mais do que produtos, uma transformacao"
+              tag="Nossa História"
+              title="Mais do que produtos, uma transformação"
               align="center"
               inverted
             />
@@ -27,7 +27,7 @@ export function ManuelaStory() {
             data-animate="fade-up"
             className="mb-6 text-lg leading-relaxed text-white/80 md:text-xl"
           >
-            Se voce chegou ate aqui... provavelmente ja passou por isso:
+            Se você chegou até aqui... provavelmente já passou por isso:
           </p>
 
           <ul
@@ -65,7 +65,7 @@ export function ManuelaStory() {
           </ul>
 
           <p className="mb-2 text-base leading-loose text-white/70">
-            E o pior... voce se olha no espelho e sente que nao e mais voce.
+            E o pior... você se olha no espelho e sente que não é mais você.
           </p>
           <p className="mb-8 text-base leading-loose text-white/70">
             Aquela mulher confiante, leve, que se amava... sumiu.
@@ -79,19 +79,19 @@ export function ManuelaStory() {
               Mas deixa eu te falar algo com toda sinceridade:
             </p>
             <p className="mt-3 font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
-              O problema nunca foi voce.
+              O problema nunca foi você.
             </p>
             <p className="mt-3 text-[15px] leading-relaxed text-white/75 md:text-base">
-              O problema foram os metodos complicados, restritivos e impossiveis
+              O problema foram os métodos complicados, restritivos e impossíveis
               de manter na vida real.
             </p>
           </div>
 
           <p className="mb-2 text-base leading-loose text-white/80">
-            Meu nome e Manuela.
+            Meu nome é Manuela.
           </p>
           <p className="mb-10 text-base leading-loose text-white/70">
-            E eu ja estive exatamente onde voce esta hoje.
+            E eu já estive exatamente onde você está hoje.
           </p>
 
           <div
@@ -127,7 +127,7 @@ export function ManuelaStory() {
             me reconhecer no espelho.
           </p>
           <p className="mb-5 text-base leading-loose text-white/70">
-            Ate que decidi mudar. Nao com dieta maluca. Nao passando fome. Mas
+            Até que decidi mudar. Não com dieta maluca. Não passando fome. Mas
             encontrando algo que funcionasse na vida real.
           </p>
           <p
@@ -137,15 +137,15 @@ export function ManuelaStory() {
             E foi assim que eu eliminei 30kg.
           </p>
           <p className="mb-5 text-base leading-loose text-white/70">
-            Hoje, com 67kg, eu nao so recuperei meu corpo... eu recuperei minha
-            confianca.
+            Hoje, com 67kg, eu não só recuperei meu corpo... eu recuperei minha
+            confiança.
           </p>
           <p className="mb-2 text-base leading-loose text-white/80">
             E o mais importante:
           </p>
           <p className="text-base leading-loose text-white/70">
-            Eu nao fui a unica. Minha irma, meu esposo, pessoas proximas... e
-            hoje centenas de mulheres tambem estao conseguindo.
+            Eu não fui a única. Minha irmã, meu esposo, pessoas próximas... e
+            hoje centenas de mulheres também estão conseguindo.
           </p>
 
           <div

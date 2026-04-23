@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "suplementos naturais",
     "emagrecimento",
     "detox",
-    "Plena Unica Premium",
+    "Plena Única Premium",
     "Life Fit Pro",
     "bem-estar feminino",
   ],

@@ -1,11 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/ui/BrandLogo";
-import { navItems } from "@/data/content";
+import { navItems, productPageNavItems } from "@/data/content";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isProductPage = pathname?.startsWith("/produto/") ?? false;
+  const items = isProductPage ? productPageNavItems : navItems;
 
   return (
     <header className="sticky top-[38px] z-50 border-b border-white/10 bg-ink">
@@ -13,7 +17,7 @@ export function Header() {
         <BrandLogo />
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
+          {items.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -38,7 +42,7 @@ export function Header() {
       {mobileOpen ? (
         <nav className="border-t border-white/10 bg-ink px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
-            {navItems.map((item) => (
+            {items.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}

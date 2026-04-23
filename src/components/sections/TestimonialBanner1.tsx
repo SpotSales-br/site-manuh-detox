@@ -86,7 +86,7 @@ export function TestimonialBanner1() {
         </button>
         <button
           onClick={() => step(1)}
-          aria-label="Proximo"
+          aria-label="Próximo"
           className="absolute right-6 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-brand shadow-lg transition-opacity hover:opacity-80 md:flex"
         >
           <ArrowRight />

@@ -33,7 +33,7 @@ export function Composition({ items, differential }: CompositionProps) {
       <div className="container-site">
         <div className="mx-auto grid max-w-[1040px] items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div data-animate="fade-right">
-            <p className="section-tag">Composicao 100% natural</p>
+            <p className="section-tag">Composição 100% natural</p>
             <h2 className="section-title">
               Um extrato de ervas pensado pra funcionar
             </h2>
@@ -108,7 +108,7 @@ export function Composition({ items, differential }: CompositionProps) {
               }`}
             >
               <span className="absolute inset-0 rounded-full border border-white/30" />
-              Composicao
+              Composição
             </div>
 
             {items.map((item, idx) => {

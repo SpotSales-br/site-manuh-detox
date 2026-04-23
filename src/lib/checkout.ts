@@ -14,7 +14,7 @@ export interface CheckoutResult {
 }
 
 /**
- * Gateway de checkout ainda em definicao. Enquanto isso, redireciona o
+ * Gateway de checkout ainda em definição. Enquanto isso, redireciona o
  * pedido para o WhatsApp com um resumo pronto. Para trocar o provedor, basta
  * implementar a branch correspondente (mercadopago/stripe/nuvemshop).
  */
@@ -40,7 +40,7 @@ const buildWhatsAppCheckout = ({
   quantity,
 }: CheckoutPayload): CheckoutResult => {
   const total = option.totalPrice * quantity;
-  const header = `Ola, ${site.name}! Gostaria de finalizar esta compra:`;
+  const header = `Olá, ${site.name}! Gostaria de finalizar esta compra:`;
   const body = `- ${product.name} (${option.label}) x${quantity} — ${formatBRL(total)}`;
   const footer = `\nTotal: ${formatBRL(total)}`;
   const message = `${header}\n\n${body}${footer}`;

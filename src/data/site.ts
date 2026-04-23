@@ -9,9 +9,9 @@ export const site = {
   shippingFreeThreshold: 500,
   maxInstallments: 6,
   announcements: [
-    "FRETE GRATIS nas compras acima de R$500,00 em produtos",
+    "FRETE GRÁTIS nas compras acima de R$ 500,00 em produtos",
     "Aplique o cupom CUPOMPRIMEIRA10% na sua primeira compra!",
-    "Parcele em ate 6x sem juros",
+    "Parcele em até 6x sem juros",
   ],
   logoUrl:
     "https://d1a9qnv764bsoo.cloudfront.net/stores/006/773/710/themes/common/logo-1968298547-1766006427-8770a5cd8395dfaf2c0e786e81cc09bd1766006427-1024-1024.webp?w=1024",

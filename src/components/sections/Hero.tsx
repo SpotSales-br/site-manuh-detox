@@ -2,7 +2,7 @@ import Image from "next/image";
 import { whatsappLink } from "@/data/site";
 
 const HERO_IMAGE = "/hero-product.webp";
-const HERO_IMAGE_ALT = "Kit Manuh Detox: Plena Unica Premium e Life Fit Pro";
+const HERO_IMAGE_ALT = "Kit Manuh Detox: Plena Única Premium e Life Fit Pro";
 
 export function Hero() {
   return (
@@ -23,12 +23,12 @@ export function Hero() {
             data-animate-item
             className="mb-9 text-[17px] leading-relaxed text-ink-soft"
           >
-            Sua leveza comeca aqui.
+            Sua leveza começa aqui.
             <br />
             Barriga lisa e energia que transborda.
             <br />
-            Um habito simples que transforma seu corpo por dentro. Menos
-            inchaco. Mais leveza. Todos os dias.
+            Um hábito simples que transforma seu corpo por dentro. Menos
+            inchaço. Mais leveza. Todos os dias.
           </p>
           <div
             data-animate-item

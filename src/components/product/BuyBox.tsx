@@ -65,7 +65,7 @@ export function BuyBox({ product }: BuyBoxProps) {
           {product.rating.toFixed(1)}
         </span>
         <span className="text-[13px] text-ink-muted">
-          ({product.reviewCount} avaliacoes)
+          ({product.reviewCount} avaliações)
         </span>
       </div>
 
@@ -89,7 +89,7 @@ export function BuyBox({ product }: BuyBoxProps) {
 
       <div className="flex flex-col gap-3">
         <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-ink-muted">
-          Escolha sua opcao
+          Escolha sua opção
         </span>
         <div className="flex flex-col gap-3">
           {product.pricingOptions.map((option) => {
@@ -201,7 +201,7 @@ export function BuyBox({ product }: BuyBoxProps) {
         disabled={isPending}
         className="w-full rounded-full bg-brand py-4 text-sm font-semibold uppercase tracking-[0.5px] text-white transition-all hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isPending ? "Redirecionando..." : "Quero minha transformacao"}
+        {isPending ? "Redirecionando..." : "Quero minha transformação"}
       </button>
     </div>
   );

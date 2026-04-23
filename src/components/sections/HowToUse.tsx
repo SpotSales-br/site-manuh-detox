@@ -9,7 +9,7 @@ export function HowToUse() {
           <SectionHeader
             tag="Modo de uso"
             title="Simples assim, todo dia"
-            subtitle="Sem dieta complicada, sem receita milagrosa. Uma capsula por dia, na hora certa."
+            subtitle="Sem dieta complicada, sem receita milagrosa. Uma cápsula por dia, na hora certa."
           />
         </div>
 

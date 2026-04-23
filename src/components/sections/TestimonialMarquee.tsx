@@ -9,14 +9,14 @@ export function TestimonialMarquee() {
             data-animate="clip-reveal"
             className="mb-3 inline-block font-display text-4xl font-semibold text-ink md:text-[36px]"
           >
-            Quem usa, sente a diferenca.
+            Quem usa, sente a diferença.
           </h2>
           <p
             data-animate="fade-up"
             data-animate-delay="0.15"
             className="mx-auto max-w-[500px] text-base text-ink-muted"
           >
-            Depoimentos reais de quem ja sentiu a leveza da Manuh Detox.
+            Depoimentos reais de quem já sentiu a leveza da Manuh Detox.
           </p>
         </div>
       </div>

@@ -62,15 +62,15 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <div className="mb-4 text-[11px] text-ink-muted">
           {product.units === 1
-            ? `1 unidade \u2022 ${product.capsulesPerUnit} capsulas`
-            : `${product.units} unidades \u2022 ${product.units * product.capsulesPerUnit} capsulas no total`}
+            ? `1 unidade \u2022 ${product.capsulesPerUnit} cápsulas`
+            : `${product.units} unidades \u2022 ${product.units * product.capsulesPerUnit} cápsulas no total`}
         </div>
 
         <Link
           href={href}
           className="block w-full rounded-[8px] bg-ink py-3.5 text-center text-[13px] font-semibold uppercase tracking-[0.5px] text-white transition-colors hover:bg-brand"
         >
-          Quero uma transformacao
+          Quero uma transformação
         </Link>
       </div>
     </article>

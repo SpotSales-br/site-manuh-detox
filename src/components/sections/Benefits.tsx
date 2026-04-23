@@ -9,7 +9,7 @@ export function Benefits() {
           <SectionHeader
             tag="Por que escolher a Manuh?"
             title="Cuidado em cada detalhe"
-            subtitle="Qualidade, transparencia e resultados reais"
+            subtitle="Qualidade, transparência e resultados reais"
           />
         </div>
         <div

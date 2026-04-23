@@ -13,7 +13,7 @@ export function UsageSteps({ steps }: UsageStepsProps) {
           <p className="section-tag">Modo de uso</p>
           <h2 className="section-title">Simples assim, todo dia</h2>
           <p className="section-subtitle">
-            Sem dieta complicada, sem receita milagrosa. So uma capsula por dia, na hora certa.
+            Sem dieta complicada, sem receita milagrosa. Só uma cápsula por dia, na hora certa.
           </p>
         </div>
 
