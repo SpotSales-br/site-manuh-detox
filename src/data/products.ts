@@ -17,10 +17,10 @@ export const products: Product[] = [
     installments: 6,
     units: 1,
     capsulesPerUnit: 30,
-    image: "/plena-1.webp",
+    image: "/plena-produto.webp",
     imageAlt: "Plena Única Premium - suplemento natural",
     galleryImages: [
-      "/plena-1.webp",
+      "/plena-produto.webp",
       "/plena-2.webp",
       "/plena-3.webp",
       "/plena-4.webp",

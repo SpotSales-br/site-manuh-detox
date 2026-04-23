@@ -15,7 +15,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {product.tag ? (
         <span
           className={`absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[1px] text-white ${
-            product.tag.variant === "iniciante" ? "bg-leaf" : "bg-ink"
+            product.tag.variant === "iniciante" ? "bg-leaf" : "bg-red-600"
           }`}
         >
           {product.tag.label}
