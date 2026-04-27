@@ -13,25 +13,40 @@ export interface CheckoutResult {
   target?: "_self" | "_blank";
 }
 
-/**
- * Gateway de checkout ainda em definição. Enquanto isso, redireciona o
- * pedido para o WhatsApp com um resumo pronto. Para trocar o provedor, basta
- * implementar a branch correspondente (mercadopago/stripe/nuvemshop).
- */
 export const startCheckout = async (
   payload: CheckoutPayload,
 ): Promise<CheckoutResult> => {
   const provider = (process.env.NEXT_PUBLIC_CHECKOUT_PROVIDER ?? "whatsapp") as
     | "whatsapp"
+    | "appmax"
     | "mercadopago"
     | "stripe"
     | "nuvemshop";
 
   switch (provider) {
+    case "appmax":
+      return buildAppmaxCheckout(payload);
     case "whatsapp":
     default:
       return buildWhatsAppCheckout(payload);
   }
+};
+
+const buildAppmaxCheckout = async ({
+  option,
+  quantity,
+}: CheckoutPayload): Promise<CheckoutResult> => {
+  const res = await fetch("/api/checkout/appmax", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ optionId: option.id, quantity }),
+  });
+  if (!res.ok) {
+    const { error } = await res.json().catch(() => ({}));
+    throw new Error(error ?? "Erro ao gerar checkout.");
+  }
+  const { url } = await res.json();
+  return { url, target: "_self" };
 };
 
 const buildWhatsAppCheckout = ({

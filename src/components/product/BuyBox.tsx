@@ -17,6 +17,7 @@ export function BuyBox({ product }: BuyBoxProps) {
   );
   const [quantity, setQuantity] = useState(1);
   const [isPending, startTransition] = useTransition();
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
   const selected = useMemo(
     () =>
@@ -29,16 +30,23 @@ export function BuyBox({ product }: BuyBoxProps) {
   const originalTotal = product.originalPrice * selected.units * quantity;
 
   const handleCheckout = () => {
+    setCheckoutError(null);
     startTransition(async () => {
-      const result = await startCheckout({
-        product,
-        option: selected,
-        quantity,
-      });
-      if (result.target === "_blank") {
-        window.open(result.url, "_blank", "noopener,noreferrer");
-      } else {
-        window.location.href = result.url;
+      try {
+        const result = await startCheckout({
+          product,
+          option: selected,
+          quantity,
+        });
+        if (result.target === "_blank") {
+          window.open(result.url, "_blank", "noopener,noreferrer");
+        } else {
+          window.location.href = result.url;
+        }
+      } catch (err) {
+        setCheckoutError(
+          err instanceof Error ? err.message : "Erro ao iniciar checkout. Tente novamente.",
+        );
       }
     });
   };
@@ -203,6 +211,10 @@ export function BuyBox({ product }: BuyBoxProps) {
       >
         {isPending ? "Redirecionando..." : "Quero minha transformação"}
       </button>
+
+      {checkoutError ? (
+        <p className="text-center text-sm text-red-600">{checkoutError}</p>
+      ) : null}
     </div>
   );
 }
