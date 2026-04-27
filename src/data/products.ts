@@ -34,6 +34,7 @@ export const products: Product[] = [
         totalPrice: 180,
         label: "1 pote",
         sublabel: "Tratamento de 30 dias",
+        checkoutUrl: "https://manuhdetox1776883365953.carrinho.app/one-checkout/ocmdf/35463640",
       },
       {
         id: "plena-2un",
@@ -44,6 +45,7 @@ export const products: Product[] = [
         sublabel: "R$ 150 cada - economize R$ 60",
         savings: 60,
         highlight: true,
+        checkoutUrl: "https://manuhdetox1776883365953.carrinho.app/one-checkout/ocmdf/35463678",
       },
     ],
     howItWorks: [
@@ -106,6 +108,7 @@ export const products: Product[] = [
         totalPrice: 200,
         label: "1 pote",
         sublabel: "Tratamento de 30 dias",
+        checkoutUrl: "https://manuhdetox1776883365953.carrinho.app/one-checkout/ocmdf/35464205",
       },
       {
         id: "lifefit-2un",
@@ -116,6 +119,7 @@ export const products: Product[] = [
         sublabel: "R$ 170 cada - economize R$ 60",
         savings: 60,
         highlight: true,
+        checkoutUrl: "https://manuhdetox1776883365953.carrinho.app/one-checkout/ocmdf/35464214",
       },
     ],
     howItWorks: [

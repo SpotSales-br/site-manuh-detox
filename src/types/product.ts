@@ -11,6 +11,7 @@ export interface PricingOption {
   sublabel?: string;
   savings?: number;
   highlight?: boolean;
+  checkoutUrl: string;
 }
 
 export interface Product {

@@ -158,33 +158,36 @@ export function BuyBox({ product }: BuyBoxProps) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-4 border-t border-line pt-5">
-        <div>
-          <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-ink-muted">
-            Quantidade
-          </span>
-          <div className="mt-2 flex items-center gap-3 rounded-full border border-line px-3 py-1.5">
-            <button
-              type="button"
-              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              aria-label="Diminuir quantidade"
-              className="text-lg text-ink-soft transition-colors hover:text-ink"
-            >
-              −
-            </button>
-            <span className="min-w-[20px] text-center text-sm font-semibold text-ink">
-              {quantity}
+      <div className="border-t border-line pt-5">
+        {/* Seletor de quantidade oculto — reativar quando necessário alterando false para true */}
+        {false && (
+          <div>
+            <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-ink-muted">
+              Quantidade
             </span>
-            <button
-              type="button"
-              onClick={() => setQuantity((q) => Math.min(99, q + 1))}
-              aria-label="Aumentar quantidade"
-              className="text-lg text-ink-soft transition-colors hover:text-ink"
-            >
-              +
-            </button>
+            <div className="mt-2 flex items-center gap-3 rounded-full border border-line px-3 py-1.5">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                aria-label="Diminuir quantidade"
+                className="text-lg text-ink-soft transition-colors hover:text-ink"
+              >
+                −
+              </button>
+              <span className="min-w-[20px] text-center text-sm font-semibold text-ink">
+                {quantity}
+              </span>
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.min(99, q + 1))}
+                aria-label="Aumentar quantidade"
+                className="text-lg text-ink-soft transition-colors hover:text-ink"
+              >
+                +
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="text-right">
           <div className="flex items-baseline justify-end gap-2">
