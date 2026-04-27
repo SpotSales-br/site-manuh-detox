@@ -7,6 +7,7 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { Products } from "@/components/sections/Products";
 import { Benefits } from "@/components/sections/Benefits";
 import { HowToUse } from "@/components/sections/HowToUse";
+import { SocialProofBanner } from "@/components/sections/SocialProofBanner";
 import { TestimonialMarquee } from "@/components/sections/TestimonialMarquee";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
@@ -18,6 +19,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <TrustBar />
+        <SocialProofBanner />
         <Benefits />
         <Products />
         <HowToUse />
