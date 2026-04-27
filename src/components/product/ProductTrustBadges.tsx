@@ -7,7 +7,7 @@ export function ProductTrustBadges() {
         <li
           key={badge.title}
           data-animate-item
-          className="flex items-start gap-3 rounded-[12px] border border-line bg-white p-3"
+          className="flex items-start gap-3 rounded-[12px] border border-line bg-bg-white p-3"
         >
           <span className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

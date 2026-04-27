@@ -81,7 +81,7 @@ export function BuyBox({ product }: BuyBoxProps) {
         {product.tag ? (
           <span
             className={`mb-3 inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[1px] text-white ${
-              product.tag.variant === "iniciante" ? "bg-leaf" : "bg-ink"
+              product.tag.variant === "iniciante" ? "bg-leaf" : "bg-canvas"
             }`}
           >
             {product.tag.label}
@@ -111,7 +111,7 @@ export function BuyBox({ product }: BuyBoxProps) {
                 className={`flex items-center justify-between gap-4 rounded-[14px] border-2 p-4 text-left transition-all ${
                   isActive
                     ? "border-brand bg-brand-light/30"
-                    : "border-line bg-white hover:border-ink-muted"
+                    : "border-line bg-bg-white hover:border-ink-muted"
                 }`}
               >
                 <div className="flex items-start gap-3">

@@ -26,7 +26,7 @@ export function UsageSteps({ steps }: UsageStepsProps) {
             <li
               key={step}
               data-animate-item
-              className="flex flex-col gap-4 rounded-[16px] border border-line bg-white p-6 text-center"
+              className="flex flex-col gap-4 rounded-[16px] border border-line bg-bg-white p-6 text-center"
             >
               <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand font-display text-[22px] font-semibold text-white">
                 {index + 1}

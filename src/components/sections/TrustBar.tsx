@@ -2,7 +2,7 @@ import { trustItems } from "@/data/content";
 
 export function TrustBar() {
   return (
-    <div className="border-b border-line bg-white py-7">
+    <div className="border-b border-line bg-bg py-7">
       <div className="group relative overflow-hidden">
         <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
           <Track />

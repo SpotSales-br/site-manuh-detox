@@ -3,7 +3,7 @@ import { benefits } from "@/data/content";
 
 export function Benefits() {
   return (
-    <section id="beneficios" className="section bg-white">
+    <section id="beneficios" className="section bg-bg-white">
       <div className="container-site">
         <div data-animate="fade-up" data-animate-duration="0.5">
           <SectionHeader

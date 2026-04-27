@@ -20,7 +20,7 @@ export function TestimonialMarquee() {
 
   return (
     <>
-      <section id="depoimentos" className="section bg-white overflow-hidden">
+      <section id="depoimentos" className="section bg-bg overflow-hidden">
         <div className="container-site">
           <div className="mb-12 text-center">
             <p className="section-tag">Veja as transformações</p>
@@ -38,8 +38,8 @@ export function TestimonialMarquee() {
         </div>
 
         <div className="group relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-32" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-bg to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-bg to-transparent md:w-32" />
 
           <div className="flex w-max animate-marquee py-2 group-hover:[animation-play-state:paused]">
             {[...provasSociais, ...provasSociais].map((src, idx) => (
@@ -73,7 +73,7 @@ export function TestimonialMarquee() {
           >
             <button
               onClick={() => setSelected(null)}
-              className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-ink shadow-md hover:bg-brand hover:text-white transition-colors"
+              className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-bg-white text-ink shadow-md hover:bg-brand hover:text-white transition-colors"
               aria-label="Fechar"
             >
               ✕

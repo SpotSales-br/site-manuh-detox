@@ -27,7 +27,7 @@ export function FinalCTA() {
         >
           <a
             href="#produtos"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-10 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+            className="inline-flex items-center gap-2 rounded-full bg-canvas px-10 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
           >
             Quero minha transformação agora
           </a>

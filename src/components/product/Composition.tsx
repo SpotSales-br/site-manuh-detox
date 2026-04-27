@@ -118,7 +118,7 @@ export function Composition({ items, differential }: CompositionProps) {
                   key={item}
                   data-animate-item
                   style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
-                  className={`absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-line bg-white font-medium text-ink shadow-[0_4px_14px_rgba(0,0,0,0.06)] ${
+                  className={`absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-line bg-bg-white font-medium text-ink shadow-[0_4px_14px_rgba(0,0,0,0.4)] ${
                     dense
                       ? "px-2.5 py-1 text-[11px] sm:px-3 sm:py-1.5 sm:text-[12px]"
                       : "px-3 py-1.5 text-[12px] sm:px-4 sm:py-2 sm:text-[13px]"

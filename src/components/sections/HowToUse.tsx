@@ -22,7 +22,7 @@ export function HowToUse() {
             <li
               key={step.number}
               data-animate-item
-              className="relative flex flex-col gap-4 rounded-[16px] border border-line bg-white p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="relative flex flex-col gap-4 rounded-[16px] border border-line bg-bg-white p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <span
                 aria-hidden

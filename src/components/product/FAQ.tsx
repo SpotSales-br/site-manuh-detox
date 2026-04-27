@@ -35,7 +35,7 @@ export function FAQ({ items }: FAQProps) {
               <li
                 key={item.question}
                 data-animate-item
-                className="overflow-hidden rounded-[12px] border border-line bg-white"
+                className="overflow-hidden rounded-[12px] border border-line bg-bg-white"
               >
                 <button
                   type="button"

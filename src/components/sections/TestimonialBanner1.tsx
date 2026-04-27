@@ -46,7 +46,7 @@ export function TestimonialBanner1() {
   };
 
   return (
-    <section id="depoimentos" className="section bg-white">
+    <section id="depoimentos" className="section bg-bg">
       <div className="container-site">
         <div className="mb-12 text-center">
           <h2 className="font-display text-4xl font-semibold text-brand md:text-[36px]">
@@ -80,14 +80,14 @@ export function TestimonialBanner1() {
         <button
           onClick={() => step(-1)}
           aria-label="Anterior"
-          className="absolute left-6 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-brand shadow-lg transition-opacity hover:opacity-80 md:flex"
+          className="absolute left-6 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-canvas text-brand shadow-lg transition-opacity hover:opacity-80 md:flex"
         >
           <ArrowLeft />
         </button>
         <button
           onClick={() => step(1)}
           aria-label="Próximo"
-          className="absolute right-6 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-brand shadow-lg transition-opacity hover:opacity-80 md:flex"
+          className="absolute right-6 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-canvas text-brand shadow-lg transition-opacity hover:opacity-80 md:flex"
         >
           <ArrowRight />
         </button>

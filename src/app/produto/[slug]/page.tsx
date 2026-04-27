@@ -85,7 +85,7 @@ export default async function ProductPage({
 
             <div
               data-animate="slide-blur"
-              className="mx-auto mt-12 max-w-[820px] rounded-[16px] border border-line bg-white p-6 md:p-8"
+              className="mx-auto mt-12 max-w-[820px] rounded-[16px] border border-line bg-bg-white p-6 md:p-8"
             >
               <h2 className="mb-3 font-display text-[22px] font-semibold text-ink">
                 Sobre o produto

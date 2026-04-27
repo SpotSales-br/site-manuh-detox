@@ -11,7 +11,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const href = `/produto/${product.slug}`;
 
   return (
-    <article className="group relative overflow-hidden rounded-[12px] border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
+    <article className="group relative overflow-hidden rounded-[12px] border border-line bg-bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_8px_40px_rgba(196,94,138,0.15)]">
       {product.tag ? (
         <span
           className={`absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[1px] text-white ${
@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <Link
         href={href}
-        className="relative block aspect-square overflow-hidden bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] p-6"
+        className="relative block aspect-square overflow-hidden bg-gradient-to-br from-[#201b1d] to-[#271e22] p-6"
         aria-label={`Ver ${product.name}`}
       >
         <Image
@@ -68,7 +68,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <Link
           href={href}
-          className="block w-full rounded-[8px] bg-ink py-3.5 text-center text-[13px] font-semibold uppercase tracking-[0.5px] text-white transition-colors hover:bg-brand"
+          className="block w-full rounded-[8px] bg-canvas py-3.5 text-center text-[13px] font-semibold uppercase tracking-[0.5px] text-white transition-colors hover:bg-brand"
         >
           Quero uma transformação
         </Link>

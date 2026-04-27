@@ -12,7 +12,7 @@ export function Header() {
   const items = isProductPage ? productPageNavItems : navItems;
 
   return (
-    <header className="sticky top-[38px] z-50 border-b border-white/10 bg-ink">
+    <header className="sticky top-[38px] z-50 border-b border-white/10 bg-canvas">
       <div className="container-site flex h-[72px] items-center justify-between">
         <BrandLogo />
 
@@ -40,7 +40,7 @@ export function Header() {
       </div>
 
       {mobileOpen ? (
-        <nav className="border-t border-white/10 bg-ink px-6 py-4 md:hidden">
+        <nav className="border-t border-white/10 bg-canvas px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             {items.map((item) => (
               <li key={item.href}>

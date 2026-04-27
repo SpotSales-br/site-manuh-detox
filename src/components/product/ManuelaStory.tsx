@@ -43,7 +43,7 @@ export function ManuelaStory() {
               >
                 <span
                   aria-hidden
-                  className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 text-brand-light"
+                  className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 text-brand"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,12 +108,12 @@ export function ManuelaStory() {
             </div>
             <span
               aria-hidden
-              className="text-3xl font-light text-brand-light md:text-4xl"
+              className="text-3xl font-light text-brand md:text-4xl"
             >
               &rarr;
             </span>
             <div className="flex flex-col items-center">
-              <strong className="font-display text-4xl font-bold text-brand-light md:text-5xl">
+              <strong className="font-display text-4xl font-bold text-brand md:text-5xl">
                 67kg
               </strong>
               <span className="mt-1 text-xs uppercase tracking-[2px] text-white/50">
@@ -132,7 +132,7 @@ export function ManuelaStory() {
           </p>
           <p
             data-animate="clip-reveal"
-            className="mb-5 inline-block font-display text-2xl font-semibold text-brand-light md:text-3xl"
+            className="mb-5 inline-block font-display text-2xl font-semibold text-brand md:text-3xl"
           >
             E foi assim que eu eliminei 30kg.
           </p>
@@ -155,7 +155,7 @@ export function ManuelaStory() {
           >
             {aboutStats.map((stat) => (
               <div key={stat.label} data-animate-item>
-                <strong className="block font-display text-3xl font-bold text-brand-light">
+                <strong className="block font-display text-3xl font-bold text-brand">
                   {stat.value}
                 </strong>
                 <span className="text-[13px] text-white/50">{stat.label}</span>

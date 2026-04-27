@@ -20,7 +20,7 @@ export function Footer() {
   const phoneDisplay = formatPhone(site.whatsapp);
 
   return (
-    <footer className="bg-ink pt-16 text-white/70">
+    <footer className="bg-canvas pt-16 text-white/70">
       <div className="container-site">
         <div className="grid grid-cols-1 gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>

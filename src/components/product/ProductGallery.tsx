@@ -22,7 +22,7 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
               type="button"
               onClick={() => setActive(index)}
               aria-label={`Ver imagem ${index + 1}`}
-              className={`relative aspect-square w-16 flex-shrink-0 overflow-hidden rounded-[10px] border-2 bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] transition-all md:w-full ${
+              className={`relative aspect-square w-16 flex-shrink-0 overflow-hidden rounded-[10px] border-2 bg-gradient-to-br from-[#201b1d] to-[#271e22] transition-all md:w-full ${
                 index === active
                   ? "border-brand"
                   : "border-line hover:border-ink-muted"
@@ -40,7 +40,7 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
         </div>
       ) : null}
 
-      <div className="relative order-1 aspect-square flex-1 overflow-hidden rounded-[16px] bg-gradient-to-br from-[#F8F5F2] to-[#F2ECE6] md:order-2">
+      <div className="relative order-1 aspect-square flex-1 overflow-hidden rounded-[16px] bg-gradient-to-br from-[#201b1d] to-[#271e22] md:order-2">
         <Image
           src={current}
           alt={alt}

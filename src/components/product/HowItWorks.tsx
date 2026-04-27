@@ -26,7 +26,7 @@ export function HowItWorks({ items }: HowItWorksProps) {
             <li
               key={item}
               data-animate-item
-              className="flex items-start gap-4 rounded-[12px] border border-line bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+              className="flex items-start gap-4 rounded-[12px] border border-line bg-bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-[0_8px_24px_rgba(196,94,138,0.12)]"
             >
               <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-light font-display text-[15px] font-bold text-brand-dark">
                 {String(index + 1).padStart(2, "0")}

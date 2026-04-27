@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       data-animate="hero"
-      className="overflow-hidden bg-gradient-to-br from-[#FAF5F0] via-[#F5EDE6] to-[#F0E8E0] py-20 md:py-24"
+      className="overflow-hidden bg-gradient-to-br from-[#0f0d0e] via-[#140f12] to-[#190f15] py-20 md:py-24"
     >
       <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-[60px]">
         <div className="mx-auto max-w-[520px] text-center lg:mx-0 lg:text-left">
