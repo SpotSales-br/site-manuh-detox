@@ -1,87 +1,95 @@
-import { testimonialCards, type TestimonialCard } from "@/data/content";
+"use client";
+
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const provasSociais = Array.from(
+  { length: 13 },
+  (_, i) => `/prova-social-${String(i + 1).padStart(2, "0")}.webp`,
+);
 
 export function TestimonialMarquee() {
+  const [selected, setSelected] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSelected(null);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [selected]);
+
   return (
-    <section id="depoimentos" className="section bg-white overflow-hidden">
-      <div className="container-site">
-        <div className="mb-12 text-center">
-          <h2
-            data-animate="clip-reveal"
-            className="mb-3 inline-block font-display text-4xl font-semibold text-ink md:text-[36px]"
-          >
-            Quem usa, sente a diferença.
-          </h2>
-          <p
-            data-animate="fade-up"
-            data-animate-delay="0.15"
-            className="mx-auto max-w-[500px] text-base text-ink-muted"
-          >
-            Depoimentos reais de quem já sentiu a leveza da Manuh Detox.
-          </p>
+    <>
+      <section id="depoimentos" className="section bg-white overflow-hidden">
+        <div className="container-site">
+          <div className="mb-12 text-center">
+            <p className="section-tag">Veja as transformações</p>
+            <h2
+              className="mb-3 inline-block font-display text-4xl font-semibold text-ink md:text-[36px]"
+            >
+              Quem usa, sente a diferença.
+            </h2>
+            <p
+              className="mx-auto max-w-[500px] text-base text-ink-muted"
+            >
+              Depoimentos reais de quem já sentiu a leveza da Manuh Detox.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="group relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-32" />
+        <div className="group relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-32" />
 
-        <div className="flex w-max animate-marquee py-2 group-hover:[animation-play-state:paused]">
-          {[...testimonialCards, ...testimonialCards].map((card, idx) => (
-            <Card key={`${card.initials}-${idx}`} card={card} />
-          ))}
+          <div className="flex w-max animate-marquee py-2 group-hover:[animation-play-state:paused]">
+            {[...provasSociais, ...provasSociais].map((src, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSelected(src)}
+                className="mr-4 relative h-[320px] w-[240px] shrink-0 overflow-hidden rounded-[16px] cursor-zoom-in md:h-[360px] md:w-[270px]"
+                aria-label={`Ver depoimento ${(idx % 13) + 1}`}
+              >
+                <Image
+                  src={src}
+                  alt={`Prova social cliente Manuh Detox ${(idx % 13) + 1}`}
+                  fill
+                  sizes="270px"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function Card({ card }: { card: TestimonialCard }) {
-  return (
-    <article className="mr-5 flex w-[320px] shrink-0 flex-col gap-3 rounded-[16px] border border-line bg-white p-6 shadow-sm md:w-[360px]">
-      <header className="flex items-center gap-3">
-        <span
-          aria-hidden
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-light text-[13px] font-semibold text-brand-dark"
+      {selected && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
         >
-          {card.initials}
-        </span>
-        <div className="flex flex-col">
-          <strong className="text-[14px] font-semibold text-ink">
-            {card.name}
-          </strong>
-          <span className="text-[12px] text-ink-muted">{card.timeAgo}</span>
+          <div
+            className="relative max-h-[90vh] max-w-[500px] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-ink shadow-md hover:bg-brand hover:text-white transition-colors"
+              aria-label="Fechar"
+            >
+              ✕
+            </button>
+            <div className="relative w-full overflow-hidden rounded-[16px]">
+              <Image
+                src={selected}
+                alt="Depoimento cliente Manuh Detox"
+                width={500}
+                height={700}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
-      </header>
-      <p className="text-[14px] leading-relaxed text-ink-soft">
-        {renderWithHighlights(card.quote, card.highlights)}
-      </p>
-    </article>
+      )}
+    </>
   );
-}
-
-function renderWithHighlights(quote: string, highlights: string[]) {
-  if (highlights.length === 0) return quote;
-
-  const pattern = new RegExp(
-    `(${highlights.map(escapeRegex).join("|")})`,
-    "gi",
-  );
-  const parts = quote.split(pattern);
-
-  return parts.map((part, idx) => {
-    const isHighlight = highlights.some(
-      (h) => h.toLowerCase() === part.toLowerCase(),
-    );
-    return isHighlight ? (
-      <strong key={idx} className="font-semibold text-brand">
-        {part}
-      </strong>
-    ) : (
-      <span key={idx}>{part}</span>
-    );
-  });
-}
-
-function escapeRegex(str: string) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

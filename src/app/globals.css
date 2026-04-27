@@ -147,7 +147,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 
 .scrollbar-hide {
